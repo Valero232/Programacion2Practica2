@@ -196,8 +196,15 @@ public class GestorCamping {
         // Declarar les variables de tipus String idAllotjament i dni.
         // Per completar
 
+        String idAllotjament;
+        String dni;
+
         // Assigna els valors corresponents.
         // Per completar
+
+        idAllotjament = "100P";
+        dni = "12345678X";
+
 
         // Crear una LocalDate per definir la data de la reserva.
         // Per completar

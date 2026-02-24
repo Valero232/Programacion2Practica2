@@ -1,6 +1,6 @@
 package prog2.model;
 
-public class Allotjament implements InAllotjament{
+public abstract class Allotjament implements InAllotjament{
 
     //Atributs de la clase Allotjament
     private String nom;
@@ -10,6 +10,7 @@ public class Allotjament implements InAllotjament{
 
     //Constructor de la clase
     public Allotjament(String nom, String idAllotjament){
+
     }
 
     //getter i setter nom
@@ -42,10 +43,6 @@ public class Allotjament implements InAllotjament{
        estadaMinimaBAIXA = estadaMinimaBAIXA_;
     }
 
-    public boolean correcteFuncionament(){
-        return true;
-    }
-
-
+    public abstract boolean correcteFuncionament();
 
 }
