@@ -94,8 +94,7 @@ public class Camping implements InCamping {
      */
     @Override
     public void afegirClient(String nom_, String dni_) {
-        Client client = new Client(nom,dni_);
-        listaClient.add(client);
+
     }
 
     /**
@@ -195,6 +194,7 @@ public class Camping implements InCamping {
      */
     @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
+
     }
 
     /**
@@ -204,15 +204,7 @@ public class Camping implements InCamping {
      */
     @Override
     public int calculAllotjamentsOperatius() {
-        int espaisOperatius = 0;
-        Iterator<Allotjament> itr = listaAllotjaments.iterator();
-        while (itr.hasNext()){
-            Allotjament e;
-            if(e.correctefuncionament()){
-                espaisOperatius++;
-            }
-        }
-        return espaisOperatius;
+        return 0;
     }
 
     /**
@@ -223,9 +215,6 @@ public class Camping implements InCamping {
      */
     @Override
     public Allotjament getAllotjamentEstadaMesCurta(InAllotjament.Temp temp) {
-        // la diferencia minima
         return null;
     }
-
-
 }
