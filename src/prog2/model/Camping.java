@@ -5,6 +5,7 @@ import prog2.vista.ExcepcioReserva;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.time.temporal.ChronoUnit;
 
 public class Camping implements InCamping {
 
@@ -17,11 +18,19 @@ public class Camping implements InCamping {
 
 
     public Camping(String nom){
-
+        this.nom = nom;
+        this.listaAllotjament = new ArrayList<Allotjament>();
+        this.listaClient = new ArrayList<Client>();
+        this.listaReserva = new ArrayList<Reserva>();
     }
 
     public static InAllotjament.Temp getTemporada(LocalDate dataEntrada) {
-
+        int dia = dataEntrada.getDayOfMonth();
+        int mes = dataEntrada.getMonthValue();
+        if(((3<mes) && (mes<9)) || (mes==3 && 21<=dia) || (mes==9 && dia<=20)) {
+            return InAllotjament.Temp.ALTA;
+        }
+        else{ return InAllotjament.Temp.BAIXA; }
     }
 
     /**
@@ -100,7 +109,6 @@ public class Camping implements InCamping {
      */
     @Override
     public void afegirClient(String nom_, String dni_) {
-
         Client client = new Client(nom_, dni_);
         listaClient.add(client);
     }
@@ -205,7 +213,8 @@ public class Camping implements InCamping {
      * @throws ExcepcioReserva si no es pot realitzar la reserva.
      */
     @Override
-    public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
+    public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva{
+        
     }
 
     /**
@@ -234,6 +243,16 @@ public class Camping implements InCamping {
      */
     @Override
     public Allotjament getAllotjamentEstadaMesCurta(InAllotjament.Temp temp) {
-        return null;
+        boolean primerCop = true;
+
+        Iterator <Allotjament> itr = listaAllotjament.iterator();
+        Allotjament allotjamentEstadaMin = itr.next();
+        long estadiaCurta = itr.next().getEstadaMinima(temp);
+        while(itr.hasNext()) {
+            if(itr.next().getEstadaMinima(temp)<estadiaCurta) {
+                allotjamentEstadaMin = itr.next();
+            }
+        }
+        return allotjamentEstadaMin;
     }
 }

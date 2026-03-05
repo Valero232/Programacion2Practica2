@@ -29,8 +29,6 @@ public class LlistaReserves implements InLlistaReserves{
     public void afegirReserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         if(isEstadaMinima){
             if (allotjamentDisponible()) {
-
-
             }
         }
     }
