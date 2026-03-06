@@ -47,11 +47,11 @@ public class LlistaReserves implements InLlistaReserves{
                 llistaReserves.add(reservaActual);
             }
             else{
-                throw new ExcepcioReserva("Allotjament no esta disponible per fer reserva");
+                throw new ExcepcioReserva("L’allotjament amb identificador " + allotjament.getId() + " no està disponible en la data demanada "+ dataEntrada +" pel client " + client.getNom() +" amb DNI: " + client.getDni() +".");
             }
         }
         else{
-            throw new ExcepcioReserva("Estada inferior a la minima.");
+            throw new ExcepcioReserva("Les dates sol·licitades pel client " + client.getNom() + " amb DNI: " + client.getDni() + " no compleixen l'estada mínima per l'allotjament amb identificador " + allotjament.getId() + ".");
         }
     }
 
@@ -100,7 +100,7 @@ public class LlistaReserves implements InLlistaReserves{
         boolean tmpEstada = false;
         long estada = ChronoUnit.DAYS.between(dataEntrada,dataSortida);
 
-        InAllotjament.Temp temp = Camping.getTemporada(dataEntrada); //crear getTemporada en camping
+        InAllotjament.Temp temp = Camping.getTemporada(dataEntrada);
         long estadaMinima = allotjament.getEstadaMinima(temp);
 
         if (estada >= estadaMinima){
