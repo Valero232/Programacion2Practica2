@@ -80,14 +80,21 @@ public class LlistaReserves implements InLlistaReserves{
         Iterator<Reserva> itr = llistaReserves.iterator();
         while(itr.hasNext()){
             Reserva reserva = itr.next();
-            if(reserva){
+            if(reserva.getAllotjament_()==allotjament){
                 //Per completar
                 LocalDate dataEntradaReservada = reserva.getDataEntrada();
                 LocalDate dataSortidaReservada = reserva.getDataSortida();
-                if((dataEntrada.isAfter(dataEntradaReservada)) && dataSortida.isBefore(dataSortidaReservada))
+                if(dataSortida.isBefore(dataEntradaReservada) || dataEntrada.isAfter(dataSortidaReservada)){
+                    return true;
+                }
             }
         }
+        return false;
     }
+    /* if(las fechas estan dentro del periodo no disponible){false}:
+
+    if(dataEntrada.isBefore(dataSortidaReservada) && dataEntrada.isAfter(dataEntradaReservada)) ||
+                    (dataSortida.isBefore(dataSortidaReservada) && dataSortida.isAfter(dataEntradaReservada))*/
 
     private boolean isEstadaMinima(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
         boolean tmpEstada = false;
