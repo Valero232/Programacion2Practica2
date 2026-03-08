@@ -73,7 +73,15 @@ public class LlistaReserves implements InLlistaReserves{
     }
 
 
-
+    /**
+     * Comprova si un allotjament està disponible per a un període determinat.
+     * Verifica que no hi hagi cap reserva existent que solapi amb les dates sol·licitades.
+     *
+     * @param allotjament L'allotjament que es vol comprovar
+     * @param dataEntrada La data d'entrada sol·licitada
+     * @param dataSortida La data de sortida sol·licitada
+     * @return true si l'allotjament està disponible, false si hi ha alguna reserva que solapi
+     */
 
     private boolean allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
 
@@ -92,6 +100,16 @@ public class LlistaReserves implements InLlistaReserves{
         }
         return true;
     }
+
+    /**
+     * Comprova que la durada de l'estada sigui igual o superior a l'estada mínima
+     * requerida per l'allotjament segons la temporada de la data d'entrada.
+     *
+     * @param allotjament L'allotjament pel qual es vol comprovar l'estada mínima
+     * @param dataEntrada La data d'entrada de la reserva
+     * @param dataSortida La data de sortida de la reserva
+     * @return true si l'estada compleix el mínim requerit, false en cas contrari
+     */
 
     private boolean isEstadaMinima(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
         boolean tmpEstada = false;

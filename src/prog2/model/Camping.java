@@ -297,20 +297,6 @@ public class Camping implements InCamping {
         }
         return allotjamentEstadaMin;
     }
-
-
-/*
-        Iterator <Allotjament> itr = listaAllotjament.iterator();
-        Allotjament allotjamentEstadaMin = itr.next();
-        long estadiaCurta = itr.next().getEstadaMinima(temp);
-        while(itr.hasNext()) {
-            if(itr.next().getEstadaMinima(temp)<estadiaCurta) {
-                allotjamentEstadaMin = itr.next();
-            }
-        }
-        return allotjamentEstadaMin;
-    }
-    */
 }
 
 
