@@ -68,5 +68,4 @@ public interface InTascaManteniment {
      * @return String amb el percentatge d'il·luminació.
      */
     String getIluminacioAllotjament();
-
 }
