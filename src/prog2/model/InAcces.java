@@ -28,7 +28,6 @@ public interface InAcces {
      * @return 
      */
     public boolean isAccessibilitat();
-
     /**
      * Retorna el nom de l'accés
      * @return
@@ -45,5 +44,5 @@ public interface InAcces {
      * Retorna la llista d'allotjaments associats a l'accés
      * @return
      */
-    public LlistaAllotjaments getAAllotjaments();
+    public LlistaAllotjaments getAllotjaments();
 }
