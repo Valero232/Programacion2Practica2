@@ -8,4 +8,11 @@ public abstract class AccesTerra extends Acces{
         super(nom,accessibilitat,estat);
         this.longitud = longitud;
     }
+
+    public void setLongitud(long longitud){
+        this.longitud = longitud;
+    }
+
+    public long getLongitud(){return longitud;}
+
 }

@@ -8,4 +8,11 @@ public abstract class AccesAsfalt extends Acces{
         super(nom,accessibilitat,estat);
         this.areaAsfalt = areaAsfalt;
     }
+
+    public void setAreaAsfalt(long areaAsfalt){
+        this.areaAsfalt = areaAsfalt;
+    }
+
+    public long getAreaAsfalt(){return areaAsfalt;}
+
 }

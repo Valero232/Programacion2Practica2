@@ -4,13 +4,12 @@ public abstract class Acces implements InAcces{
 
     //Atributs
     private String nom;
-    private String accessibilitat;
     private boolean estat;
+    boolean accessibilitat;
     private llistaAllotjaments llistaAllotjaments = new LlistaAllotjaments();
 
-    public Acces(String nom, String accessibilitat, boolean estat){
+    public Acces(String nom, boolean estat){
         this.nom = nom;
-        this.accessibilitat = accessibilitat;
         this.estat = estat;
     }
 
@@ -21,7 +20,6 @@ public abstract class Acces implements InAcces{
      */
     @Override
     public void afegirAllotjament(Allotjament allotjament) {
-
     }
 
     /**
@@ -29,7 +27,7 @@ public abstract class Acces implements InAcces{
      */
     @Override
     public void tancarAcces() {
-
+        estat = false;
     }
 
     /**
@@ -37,7 +35,7 @@ public abstract class Acces implements InAcces{
      */
     @Override
     public void obrirAcces() {
-
+        estat = true;
     }
 
     /**
@@ -57,7 +55,7 @@ public abstract class Acces implements InAcces{
      */
     @Override
     public String getNom() {
-        return "";
+        return nom;
     }
 
     /**
@@ -65,9 +63,12 @@ public abstract class Acces implements InAcces{
      *
      * @return
      */
+
+    public void setNom(String nom){this.nom=nom;}
+
     @Override
     public boolean getEstat() {
-        return false;
+        return estat;
     }
 
     /**
@@ -77,6 +78,6 @@ public abstract class Acces implements InAcces{
      */
     @Override
     public LlistaAllotjaments getAllotjaments() {
-        return null;
+        return llistaAllotjaments;
     }
 }
