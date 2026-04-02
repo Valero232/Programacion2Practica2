@@ -7,13 +7,17 @@ public abstract class Allotjament implements InAllotjament{
     private String idAllotjament;
     private long estadaMinimaALTA;
     private long estadaMinimaBAIXA;
+    private boolean operatiu;
+    String iluminacio;
 
     //Constructor de la clase
-    public Allotjament(String nom, String idAllotjament, long estadaMinimaALTA, long estadaMinimaBAIXA){
+    public Allotjament(String nom, String idAllotjament, long estadaMinimaALTA, long estadaMinimaBAIXA, boolean operatiu, String iluminacio){
         this.nom = nom;
         this.idAllotjament = idAllotjament;
         this.estadaMinimaALTA = estadaMinimaALTA;
         this.estadaMinimaBAIXA = estadaMinimaBAIXA;
+        this.operatiu = operatiu;
+        this.iluminacio = iluminacio;
     }
 
     //getter i setter nom
@@ -58,5 +62,33 @@ public abstract class Allotjament implements InAllotjament{
     }
 
     public abstract boolean correcteFuncionament();
+
+    public void setIluminacio(String iluminacio){
+        this.iluminacio = iluminacio;
+    }
+
+    public String getIluminacio(){return iluminacio;}
+
+    public void setOperatiu(boolean operatiu){
+        this.operatiu = operatiu;
+    }
+
+    public boolean getOperatiu(){return operatiu;}
+
+    @Override
+    public void tancarAllotjament(TascaManteniment tasca){
+        operatiu = false;
+        iluminacio = tasca.getIluminacioAllotjament();
+    }
+
+    @Override
+    public void obrirAllotjament(){
+        operatiu = true;
+        iluminacio = "100%";
+    }
+
+    public boolean isOperatiu(){
+
+    }
 
 }

@@ -68,4 +68,11 @@ public interface InTascaManteniment {
      * @return String amb el percentatge d'il·luminació.
      */
     String getIluminacioAllotjament();
+
+    public static enum TipusTascaManteniment{
+        Reparacio,
+        Neteja,
+        RevisioTecnica,
+        Desinfeccio
+    }
 }

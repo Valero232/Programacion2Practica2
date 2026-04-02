@@ -126,13 +126,23 @@ public class TascaManteniment implements InTascaManteniment{
      */
     @Override
     public String getIluminacioAllotjament() {
-        return "";
+        String llum = "";
+        switch(tipus) {
+            case Reparacio:
+                llum = "50%";
+                break;
+            case Neteja:
+                llum = "100%";
+                break;
+            case RevisioTecnica:
+                llum = "50%";
+                break;
+            case Desinfeccio:
+                llum = "0%";
+                break;
+        }
+        return llum;
     }
 
-    public static enum TipusTascaManteniment{
-        Reparacio,
-        Neteja,
-        RevisioTecnica,
-        Desinfeccio
-    }
+
 }
