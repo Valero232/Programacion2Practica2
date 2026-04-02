@@ -21,8 +21,7 @@ public interface InAcces {
      * Canvia l'estat de l'accés a obert 
      */
     public void obrirAcces();
-    
-        
+
     /**
      * Retorna si l'accés permet accessibilitat amb cotxe o no.
      * @return 

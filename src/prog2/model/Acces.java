@@ -5,7 +5,7 @@ public abstract class Acces implements InAcces{
     //Atributs
     private String nom;
     private boolean estat;
-    boolean accessibilitat;
+    protected boolean accessibilitat;
     private llistaAllotjaments llistaAllotjaments = new LlistaAllotjaments();
 
     public Acces(String nom, boolean estat){
@@ -44,9 +44,7 @@ public abstract class Acces implements InAcces{
      * @return
      */
     @Override
-    public boolean isAccessibilitat() {
-        return false;
-    }
+    public abstract boolean isAccessibilitat();
 
     /**
      * Retorna el nom de l'accés

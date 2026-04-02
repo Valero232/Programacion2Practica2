@@ -5,14 +5,15 @@ public class CarreteraTerra extends AccesTerra{
     //Atribut
     private long amplada;
 
-    public CarreteraTerra(String nom, String accessibilitat, boolean estat, long longitud, long amplada){
-        super(nom,accessibilitat,estat,longitud);
+    public CarreteraTerra(String nom, boolean estat, long longitud, long amplada){
+        super(nom,estat,longitud);
         this.amplada = amplada;
+        this.accessibilitat = true;
     }
 
     @Override
     public boolean isAccessibilitat() {
-        return true;
+        return accessibilitat;
     }
 
     public void setAmplada(long amplada){
