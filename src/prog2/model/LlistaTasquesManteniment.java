@@ -1,6 +1,20 @@
 package prog2.model;
 
+import java.util.ArrayList;
+
 public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
+
+    //Atributs
+    private ArrayList<TascaManteniment> llistaTascaManteminet;
+
+
+    public LlistaTasquesManteniment(){
+        llistaTascaManteminet = new ArrayList<TascaManteniment>();
+    }
+
+
+
+
     /**
      * Aquest mètode crea una tasca de manteniment amb la informació passada com a paràmetres
      * (número d'identificador, tipus, l'allotjament on s'ha produït, la data, i els dies esperats per completar-la) i l'afegeix a la llista.

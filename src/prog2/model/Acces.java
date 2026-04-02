@@ -6,7 +6,7 @@ public abstract class Acces implements InAcces{
     private String nom;
     private boolean estat;
     protected boolean accessibilitat;
-    private llistaAllotjaments llistaAllotjaments = new LlistaAllotjaments();
+    private LlistaAllotjaments llistaAllotjaments = new LlistaAllotjaments();
 
     public Acces(String nom, boolean estat){
         this.nom = nom;

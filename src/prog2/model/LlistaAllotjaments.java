@@ -1,6 +1,16 @@
 package prog2.model;
 
+import java.util.ArrayList;
+
 public class LlistaAllotjaments implements InLlistaAllotjaments{
+
+ //Atributs
+    private ArrayList<Allotjament> llistaAllotjaments;
+
+
+  public LlistaAllotjaments(){
+      llistaAllotjaments = new ArrayList<Allotjament>();
+  }
     /**
      * Afegeix un allotjament rebut per paràmetre a la llista d'allotjaments.
      *

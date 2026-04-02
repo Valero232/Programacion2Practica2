@@ -144,5 +144,10 @@ public class TascaManteniment implements InTascaManteniment{
         return llum;
     }
 
-
+    public static enum TipusTascaManteniment{
+        Reparacio,
+        Neteja,
+        RevisioTecnica,
+        Desinfeccio
+    }
 }

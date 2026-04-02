@@ -56,6 +56,7 @@ public abstract class Allotjament implements InAllotjament{
        estadaMinimaBAIXA = estadaMinimaBAIXA_;
     }
 
+    //-----------------------------------------------------------Practica 2 -------------------------------------------------------
     @Override
     public String toString(){
       return "Nom="+nom+", Id="+idAllotjament+", estada mínima en temp ALTA: "+estadaMinimaALTA+", estada mínima en temp " + "BAIXA: "+estadaMinimaBAIXA+".";

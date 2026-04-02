@@ -1,6 +1,19 @@
 package prog2.model;
 
+import java.util.ArrayList;
+
 public class LlistaAccessos implements InLlistaAccessos{
+
+
+    //Atributs
+    private ArrayList<Acces> llistaAcces;
+
+
+    public LlistaAccessos(){
+        llistaAcces = new ArrayList<Acces>();
+    }
+
+
     /**
      * Afegeix un accés rebut per paràmetre a la llista d'accessos.
      *
