@@ -30,7 +30,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public void buidar() {
-        llistaAllotjaments = null;
+        llistaAllotjaments = new ArrayList<Allotjament>();;
     }
 
     /**

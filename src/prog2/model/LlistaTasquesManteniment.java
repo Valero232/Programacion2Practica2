@@ -32,7 +32,20 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
      */
     @Override
     public void afegirTascaManteniment(int num, String tipus, Allotjament allotjament, String data, int dies) throws ExcepcioCamping {
-
+       if(!allotjament.isOperatiu()){
+           throw new ExcepcioCamping("Allotjament no operatiu");
+       }
+       else {
+        try {
+            TascaManteniment.TipusTascaManteniment tipus1 = TascaManteniment.TipusTascaManteniment.valueOf(tipus);
+            TascaManteniment tascaManteniment = new TascaManteniment(num, tipus1, allotjament, data, dies);
+            allotjament.tancarAllotjament(tascaManteniment);
+            llistaTascaManteniment.add(tascaManteniment);
+        }
+        catch (IllegalArgumentException e){
+            throw new ExcepcioCamping("Tipus de tasca no existeix");
+        }
+       }
     }
 
     /**
@@ -41,16 +54,20 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
      * @param tasca Objecte de tipus TascaManteniment
      * @throws ExcepcioCamping
      */
-    //No se como implementar la excepcion
     @Override
     public void completarTascaManteniment(TascaManteniment tasca) throws ExcepcioCamping {
         Iterator<TascaManteniment> itr = llistaTascaManteniment.iterator();
+        boolean trobat = false;
         while(itr.hasNext()){
             TascaManteniment tascaManteniment = itr.next();
             if(tascaManteniment==tasca){
                 llistaTascaManteniment.remove(tascaManteniment);
                 tascaManteniment.getAllotjament().obrirAllotjament();
+                trobat = true;
             }
+        }
+        if(!trobat){
+            throw new ExcepcioCamping("Tasca manteniment no trobada");
         }
 
     }

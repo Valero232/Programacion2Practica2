@@ -89,7 +89,7 @@ public abstract class Allotjament implements InAllotjament{
     }
 
     public boolean isOperatiu(){
-
+        return operatiu;
     }
 
 }
