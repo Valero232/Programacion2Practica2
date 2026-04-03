@@ -43,6 +43,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
+
         Iterator<Allotjament> itr = llistaAllotjaments.iterator();
         String llista = "";
         while(itr.hasNext()){
