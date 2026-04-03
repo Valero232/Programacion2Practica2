@@ -1,6 +1,8 @@
 package prog2.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
 import prog2.vista.ExcepcioCamping;
 
 public class LlistaAccessos implements InLlistaAccessos{
@@ -30,9 +32,7 @@ public class LlistaAccessos implements InLlistaAccessos{
      * Buida la llista d'accessos
      */
     @Override
-    public void buidar() {
-        llistaAcces = new ArrayList<Acces>();
-    }
+    public void buidar() { llistaAcces = new ArrayList<Acces>();}
 
     /**
      * Itera sobre la llista d'accessos i retorna un String amb la informació de tots els accessos amb l'estat rebut per paràmetre.
@@ -77,6 +77,10 @@ public class LlistaAccessos implements InLlistaAccessos{
      */
     @Override
     public float calculaMetresTerra() throws ExcepcioCamping {
+        Iterator<Acces> itr = llistaAcces.iterator();
+        while(itr.hasNext()) {
+
+        }
         return 0;
     }
 }

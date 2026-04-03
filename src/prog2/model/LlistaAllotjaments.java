@@ -22,7 +22,12 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public void afegirAllotjament(Allotjament allotjament) throws ExcepcioCamping {
-
+        if(!contains(allotjament)){
+            llistaAllotjaments.add(allotjament);
+        }
+        else{
+            throw new ExcepcioCamping("L’allotjament amb identificador " + allotjament.getId() + " ja existeix a la llista.");
+        }
     }
 
     /**

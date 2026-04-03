@@ -79,4 +79,9 @@ public abstract class Acces implements InAcces{
     public LlistaAllotjaments getAllotjaments() {
         return llistaAllotjaments;
     }
+
+    @Override
+    public String toString(){
+        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+", llistat allotjaments="+llistaAllotjaments.llistarAllotjaments();
+    }
 }
