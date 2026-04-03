@@ -1,15 +1,17 @@
 package prog2.model;
 
 import java.util.ArrayList;
+import prog2.vista.ExcepcioCamping;
+import java.util.Iterator;
 
 public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
 
     //Atributs
-    private ArrayList<TascaManteniment> llistaTascaManteminet;
+    private ArrayList<TascaManteniment> llistaTascaManteniment;
 
 
     public LlistaTasquesManteniment(){
-        llistaTascaManteminet = new ArrayList<TascaManteniment>();
+        llistaTascaManteniment = new ArrayList<TascaManteniment>();
     }
 
 
@@ -39,8 +41,17 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
      * @param tasca Objecte de tipus TascaManteniment
      * @throws ExcepcioCamping
      */
+    //No se como implementar la excepcion
     @Override
     public void completarTascaManteniment(TascaManteniment tasca) throws ExcepcioCamping {
+        Iterator<TascaManteniment> itr = llistaTascaManteniment.iterator();
+        while(itr.hasNext()){
+            TascaManteniment tascaManteniment = itr.next();
+            if(tascaManteniment==tasca){
+                llistaTascaManteniment.remove(tascaManteniment);
+                tascaManteniment.getAllotjament().obrirAllotjament();
+            }
+        }
 
     }
 
@@ -53,7 +64,17 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
      */
     @Override
     public String llistarTasquesManteniment() throws ExcepcioCamping {
-        return "";
+        Iterator<TascaManteniment> itr = llistaTascaManteniment.iterator();
+        String llista = "";
+        while(itr.hasNext()){
+            llista += itr.next().toString()+"\n";
+        }
+        if(llista!=""){
+            return llista;
+        }
+        else{
+            throw new ExcepcioCamping("No hi ha cap tasca a la llista");
+        }
     }
 
     /**
@@ -66,6 +87,13 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
      */
     @Override
     public TascaManteniment getTascaManteniment(int num) throws ExcepcioCamping {
-        return null;
+        Iterator<TascaManteniment> itr = llistaTascaManteniment.iterator();
+        while(itr.hasNext()){
+            TascaManteniment tascaManteniment = itr.next();
+            if(tascaManteniment.getNum()==num){
+                return tascaManteniment;
+            }
+        }
+        throw new ExcepcioCamping("La tasca amb el número "+num+" no existeix");
     }
 }

@@ -144,6 +144,11 @@ public class TascaManteniment implements InTascaManteniment{
         return llum;
     }
 
+    @Override
+    public String toString(){
+        return "Número="+numTasca+", Allotjament{"+allotjament.toString()+"}, data="+data+", tipus="+tipus+", dies="+dies+".";
+    }
+
     public static enum TipusTascaManteniment{
         Reparacio,
         Neteja,

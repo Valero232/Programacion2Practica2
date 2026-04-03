@@ -59,7 +59,7 @@ public abstract class Allotjament implements InAllotjament{
     //-----------------------------------------------------------Practica 2 -------------------------------------------------------
     @Override
     public String toString(){
-      return "Nom="+nom+", Id="+idAllotjament+", estada mínima en temp ALTA: "+estadaMinimaALTA+", estada mínima en temp " + "BAIXA: "+estadaMinimaBAIXA+".";
+      return "Nom="+nom+", Id="+idAllotjament+", estada mínima en temp ALTA: "+estadaMinimaALTA+", estada mínima en temp " + "BAIXA: "+estadaMinimaBAIXA+", operatiu: "+operatiu+", il·luminació:"+iluminacio+".";
     }
 
     public abstract boolean correcteFuncionament();

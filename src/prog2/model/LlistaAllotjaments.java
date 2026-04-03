@@ -1,6 +1,9 @@
 package prog2.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
+import prog2.vista.ExcepcioCamping;
 
 public class LlistaAllotjaments implements InLlistaAllotjaments{
 
@@ -27,7 +30,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public void buidar() {
-
+        llistaAllotjaments = null;
     }
 
     /**
@@ -40,7 +43,17 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
-        return "";
+        Iterator<Allotjament> itr = llistaAllotjaments.iterator();
+        String llista = "";
+        while(itr.hasNext()){
+            llista += itr.next().toString()+"\n";
+        }
+        if(llista!=""){
+            return llista;
+        }
+        else{
+            throw new ExcepcioCamping("No hi ha cap tasca a la llista");
+        }
     }
 
     /**
@@ -50,6 +63,13 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public boolean containsAllotjamentOperatiu() {
+        Iterator<Allotjament> itr = llistaAllotjaments.iterator();
+        while (itr.hasNext()) {
+            Allotjament allotjament = itr.next();
+            if (allotjament.isOperatiu()) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -61,9 +81,15 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public boolean contains(Allotjament allotjament) {
+        Iterator<Allotjament> itr = llistaAllotjaments.iterator();
+        while (itr.hasNext()) {
+            Allotjament allotjament_ = itr.next();
+            if (allotjament_ == allotjament) {
+                return true;
+            }
+        }
         return false;
     }
-
     /**
      * Busca l'allotjament amb el nom rebut per paràmetre i el retorna. En cas que no existeixi llança una excepció.
      *
@@ -73,6 +99,13 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public Allotjament getAllotjament(String id) throws ExcepcioCamping {
-        return null;
+        Iterator<Allotjament> itr = llistaAllotjaments.iterator();
+        while(itr.hasNext()){
+            Allotjament allotjament = itr.next();
+            if(allotjament.getId()==id){
+                return allotjament;
+            }
+        }
+        throw new ExcepcioCamping("L'allotjament amb id "+id+" no existeix");
     }
 }

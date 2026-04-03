@@ -1,6 +1,7 @@
 package prog2.model;
 
 import java.util.ArrayList;
+import prog2.vista.ExcepcioCamping;
 
 public class LlistaAccessos implements InLlistaAccessos{
 
