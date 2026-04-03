@@ -97,10 +97,21 @@ public class LlistaAccessos implements InLlistaAccessos{
      */
     @Override
     public float calculaMetresTerra() throws ExcepcioCamping {
+        float metres = 0.0f;
+        boolean minimo = false;
         Iterator<Acces> itr = llistaAcces.iterator();
         while(itr.hasNext()) {
-
+            Acces acces = itr.next();
+            if (acces instanceof AccesTerra){
+                metres += ((AccesTerra)acces).getLongitud();
+                minimo = true;
+            }
         }
-        return 0;
+        if (minimo){
+            return metres;
+        }
+        else{
+            throw new ExcepcioCamping("No hi ha Accesos tipus terra per sumar longituds");
+        }
     }
 }

@@ -2,17 +2,17 @@ package prog2.model;
 
 public abstract class AccesTerra extends Acces{
     //Atributs
-    private long longitud;
+    private float longitud;
 
-    public AccesTerra(String nom, boolean estat, long longitud){
+    public AccesTerra(String nom, boolean estat, float longitud){
         super(nom,estat);
         this.longitud = longitud;
     }
 
-    public void setLongitud(long longitud){
+    public void setLongitud(float longitud){
         this.longitud = longitud;
     }
 
-    public long getLongitud(){return longitud;}
+    public float getLongitud(){return longitud;}
 
 }

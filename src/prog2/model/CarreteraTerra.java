@@ -3,9 +3,9 @@ package prog2.model;
 public class CarreteraTerra extends AccesTerra{
 
     //Atribut
-    private long amplada;
+    private float amplada;
 
-    public CarreteraTerra(String nom, boolean estat, long longitud, long amplada){
+    public CarreteraTerra(String nom, boolean estat, float longitud, float amplada){
         super(nom,estat,longitud);
         this.amplada = amplada;
         this.accessibilitat = true;
@@ -16,9 +16,9 @@ public class CarreteraTerra extends AccesTerra{
         return accessibilitat;
     }
 
-    public void setAmplada(long amplada){
+    public void setAmplada(float amplada){
         this.amplada = amplada;
     }
 
-    public long getAmplada(){return amplada;}
+    public float getAmplada(){return amplada;}
 }

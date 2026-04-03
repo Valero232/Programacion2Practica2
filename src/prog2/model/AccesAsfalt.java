@@ -2,17 +2,17 @@ package prog2.model;
 
 public abstract class AccesAsfalt extends Acces{
     //Atributs
-    private long areaAsfalt;
+    private float areaAsfalt;
 
-    public AccesAsfalt(String nom, boolean estat, long areaAsfalt){
+    public AccesAsfalt(String nom, boolean estat, float areaAsfalt){
         super(nom,estat);
         this.areaAsfalt = areaAsfalt;
     }
 
-    public void setAreaAsfalt(long areaAsfalt){
+    public void setAreaAsfalt(float areaAsfalt){
         this.areaAsfalt = areaAsfalt;
     }
 
-    public long getAreaAsfalt(){return areaAsfalt;}
+    public float getAreaAsfalt(){return areaAsfalt;}
 
 }
