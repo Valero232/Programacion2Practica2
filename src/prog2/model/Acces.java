@@ -20,6 +20,7 @@ public abstract class Acces implements InAcces{
      */
     @Override
     public void afegirAllotjament(Allotjament allotjament) {
+
     }
 
     /**

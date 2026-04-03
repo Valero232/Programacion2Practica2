@@ -31,7 +31,7 @@ public class LlistaAccessos implements InLlistaAccessos{
      */
     @Override
     public void buidar() {
-
+        llistaAcces = new ArrayList<Acces>();
     }
 
     /**
