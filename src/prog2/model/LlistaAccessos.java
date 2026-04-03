@@ -45,7 +45,18 @@ public class LlistaAccessos implements InLlistaAccessos{
      */
     @Override
     public String llistarAccessos(boolean estat) throws ExcepcioCamping {
-        return "";
+        Iterator<Acces> itr = llistaAcces.iterator();
+        String llistat = "";
+        boolean buit = true;
+        while(itr.hasNext()){
+            Acces acces = itr.next();
+            if(acces.getEstat()==estat){
+                llistat += acces.toString();
+            }
+            buit = false;
+        }
+        if(buit){throw new ExcepcioCamping("La llista d'accessos està buida");}
+        return llistat;
     }
 
     /**

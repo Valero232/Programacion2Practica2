@@ -82,6 +82,6 @@ public abstract class Acces implements InAcces{
 
     @Override
     public String toString(){
-        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+", llistat allotjaments="+llistaAllotjaments.llistarAllotjaments();
+        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+", allotjaments ="+llistaAllotjaments.llistarAllotjaments("Operatiu")+llistaAllotjaments.llistarAllotjaments("No Operatiu")+". ";
     }
 }
