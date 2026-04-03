@@ -55,7 +55,17 @@ public class LlistaAccessos implements InLlistaAccessos{
      */
     @Override
     public void actualitzaEstatAccessos() throws ExcepcioCamping {
-
+        Iterator<Acces> itr = llistaAcces.iterator();
+        boolean buit=true;
+        while(itr.hasNext()){
+            Acces acces = itr.next();
+            acces.tancarAcces();
+            if(acces.getAllotjaments().containsAllotjamentOperatiu()){
+                acces.obrirAcces();
+            }
+            buit=false;
+        }
+        if(buit){throw new ExcepcioCamping("La llista d'accessos està buida");};
     }
 
     /**
@@ -66,7 +76,17 @@ public class LlistaAccessos implements InLlistaAccessos{
      */
     @Override
     public int calculaAccessosNoAccessibles() throws ExcepcioCamping {
-        return 0;
+        Iterator<Acces> itr = llistaAcces.iterator();
+        boolean buit=true;
+        int numAccessosNoAccessibles = 0;
+        while(itr.hasNext()){
+            if(itr.next().isAccessibilitat()){
+                numAccessosNoAccessibles++;
+            }
+            buit = false;
+        }
+        if(buit){ throw new ExcepcioCamping("La llista d'accessos està buida");}
+        return numAccessosNoAccessibles;
     }
 
     /**

@@ -2,6 +2,7 @@ package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -127,7 +128,31 @@ public class Camping implements InCamping {
      */
     @Override
     public void save(String camiDesti) throws ExcepcioCamping {
+        if (camiDesti == null) {
+            throw new ExcepcioCamping("Cami fitxer destí no valid");
+        }
+        File file = new File(camiDesti);
+        FileOutputStream fout = null;
+        try {
+            //Preparem el fitxer de sortida
+            fout = new FileOutputStream(file);
 
+            //Guardem el fitxer
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(this);
+        } catch (FileNotFoundException ex) {
+            throw new ExcepcioCamping("Fitxer no trobat");
+        } catch (IOException ex) {
+            throw new ExcepcioCamping("Problema d'escriptura");
+        } finally {
+            try {
+                if (fout != null) {
+                    fout.close();
+                }
+            } catch (IOException ex) {
+                throw new ExcepcioCamping("No es pot tancar el fitxer");
+            }
+        }
     }
 
     /**
