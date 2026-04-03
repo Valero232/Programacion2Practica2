@@ -14,9 +14,6 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment{
         llistaTascaManteniment = new ArrayList<TascaManteniment>();
     }
 
-
-
-
     /**
      * Aquest mètode crea una tasca de manteniment amb la informació passada com a paràmetres
      * (número d'identificador, tipus, l'allotjament on s'ha produït, la data, i els dies esperats per completar-la) i l'afegeix a la llista.

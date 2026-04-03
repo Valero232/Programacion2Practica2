@@ -2,6 +2,7 @@ package prog2.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Locale;
 
 import prog2.vista.ExcepcioCamping;
 
@@ -48,17 +49,32 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
      */
     @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
+        boolean minim = false;
+        boolean estat_;
+
+        if(estat.toUpperCase().equals("OPERATIU")){
+            estat_ = true;
+        } else if (estat.toUpperCase().equals("NO OPERATIU")){
+            estat_ = false;
+        } else {
+            throw new ExcepcioCamping("Estat no escrit correctament");
+        }
+
 
         Iterator<Allotjament> itr = llistaAllotjaments.iterator();
         String llista = "";
         while(itr.hasNext()){
-            llista += itr.next().toString()+"\n";
+            Allotjament allotjament = itr.next();
+            if (allotjament.isOperatiu() == estat_) {
+                llista += allotjament.toString() + "\n";
+                minim = true;
+            }
         }
-        if(llista!=""){
+        if(minim){
             return llista;
         }
         else{
-            throw new ExcepcioCamping("No hi ha cap tasca a la llista");
+            throw new ExcepcioCamping("No hi ha allotjaments en l'estat passat com a paràmetre");
         }
     }
 
