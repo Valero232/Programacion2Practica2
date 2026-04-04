@@ -57,8 +57,8 @@ public class Camping implements InCamping {
     public String llistarAccessos(String infoEstat) throws ExcepcioCamping {
         boolean estat;
         if(infoEstat.equals("Obert")){estat = true;}
-        if(infoEstat.equals("Tancat")){estat = false;}
-        else{throw new ExcepcioCamping("L'estat indicat no és correcte");};
+        else if(infoEstat.equals("Tancat")){estat = false;}
+        else{throw new ExcepcioCamping("L'estat indicat no és correcte");}
         return llistaAccessos.llistarAccessos(estat);
     }
 
