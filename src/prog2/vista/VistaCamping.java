@@ -7,8 +7,9 @@ public class VistaCamping {
 
     private Camping camping;
 
-    VistaCamping(){
-      camping.inicialitzaDadesCamping();
+    VistaCamping(String nomCamping){
+        camping = new Camping(nomCamping);
+        camping.inicialitzaDadesCamping();
     }
 
 

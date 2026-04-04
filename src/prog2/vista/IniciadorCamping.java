@@ -17,6 +17,6 @@ public class IniciadorCamping {
         VistaCamping vistaCamping = new VistaCamping(nomCamping);
      
         // Inicialitzem l'execució de la vista
-        vistaCamping.gestioCamping();
+       vistaCamping.gestioCamping();
     }
 }

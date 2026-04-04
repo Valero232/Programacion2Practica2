@@ -37,6 +37,6 @@ public class AccesTest {
         assertFalse(acces2.isAccessibilitat());
         assertTrue(acces1.getEstat());
         assertFalse(acces2.getEstat());
-        assertTrue(acces1.getAAllotjaments() instanceof LlistaAllotjaments);
+        assertTrue(acces1.getAllotjaments() instanceof LlistaAllotjaments);
     }
 }
