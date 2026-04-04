@@ -33,11 +33,6 @@ public class VistaCamping {
             "Recuperar càmping",
             "Sortir de l'aplicació"};
 
-    // Declarem descripcions personalitzades per a les opcions del menú secundari
-    static private String[] descMenu2={"Primera Opció del menú secundari",
-                                        "Segona Opció del menú secundari",
-                                            "Menú anterior"};
-
 
     VistaCamping(String nomCamping) {
         camping = new Camping(nomCamping);
