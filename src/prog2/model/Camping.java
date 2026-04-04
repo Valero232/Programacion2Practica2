@@ -110,7 +110,12 @@ public class Camping implements InCamping {
      */
     @Override
     public int calculaAccessosNoAccessibles() {
-        return llistaAccessos.calculaAccessosNoAccessibles();
+       try {
+           return llistaAccessos.calculaAccessosNoAccessibles();
+       } catch (ExcepcioCamping e) {
+           System.out.println(e.getMessage());
+            return 0;
+       }
     }
 
     /**
@@ -120,7 +125,12 @@ public class Camping implements InCamping {
      */
     @Override
     public float calculaMetresTerra() {
-        return llistaAccessos.calculaMetresTerra();
+        try{
+           return llistaAccessos.calculaMetresTerra();
+        } catch (ExcepcioCamping e) {
+            System.out.println(e.getMessage());
+            return 0.0F;
+        }
     }
 
     /**

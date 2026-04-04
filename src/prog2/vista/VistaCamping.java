@@ -149,11 +149,15 @@ public class VistaCamping {
                     break;
 
                 case MENU_PRINCIPAL_OPCIO9:
-                    System.out.println("Accessos que NO proporcionen accessibilitat amb vehicle: " +camping.calculaAccessosNoAccessibles());
+                    try {
+                        System.out.println("Accessos que NO proporcionen accessibilitat amb vehicle: " + camping.calculaAccessosNoAccessibles());
+                    } catch (ExcepcioCamping e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
 
                 case MENU_PRINCIPAL_OPCIO10:
-                    System.out.println("Número total de metres dels accessos de terra" + camping.calculaMetresTerra());
+                        System.out.println("Número total de metres dels accessos de terra" + camping.calculaMetresTerra());
                     break;
 
                 case MENU_PRINCIPAL_OPCIO11:
