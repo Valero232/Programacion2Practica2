@@ -124,6 +124,39 @@ public class Camping implements InCamping {
     }
 
     /**
+     * Carrega l'estat d'un càmping des d'un fitxer.
+     * @param camiOrigen Ruta del fitxer d'origen.
+     * @return Una instància de la classe Camping carregada des del fitxer.
+     * @throws ExcepcioCamping
+     */
+    public static Camping load(String camiOrigen) throws ExcepcioCamping {
+        if(camiOrigen == null){
+            throw new ExcepcioCamping("Cami fitxer origen no valid");
+        }
+        File file = new File(camiOrigen);
+        FileInputStream fin = null;
+        try{
+            fin = new FileInputStream(file);
+
+            ObjectInputStream ois = new ObjectInputStream(fin);
+            Camping camping = (Camping) ois.readObject();
+            return camping;
+        } catch(IOException ex) {
+            throw new ExcepcioCamping("Problema de lectura");
+        } catch(ClassNotFoundException ex){
+            throw new ExcepcioCamping("Classe no trobada");
+        } finally {
+            try {
+                if (fin != null) {
+                    fin.close();
+                }
+            } catch (IOException ex) {
+                throw new ExcepcioCamping("No es pot tancar el fitxer");
+            }
+        }
+    }
+
+    /**
      * Guarda l'estat actual del càmping en un fitxer.
      *
      * @param camiDesti Ruta del fitxer de destinació.
