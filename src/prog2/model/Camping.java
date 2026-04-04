@@ -43,9 +43,7 @@ public class Camping implements InCamping {
      */
     @Override
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
-
-
-        return "";
+        return llistaAllotjaments.llistarAllotjaments(estat);
     }
 
     /**
@@ -57,7 +55,11 @@ public class Camping implements InCamping {
      */
     @Override
     public String llistarAccessos(String infoEstat) throws ExcepcioCamping {
-        return "";
+        boolean estat;
+        if(infoEstat.equals("Obert")){estat = true;}
+        if(infoEstat.equals("Tancat")){estat = false;}
+        else{throw new ExcepcioCamping("L'estat indicat no és correcte");};
+        return llistaAccessos.llistarAccessos(estat);
     }
 
     /**
@@ -68,7 +70,7 @@ public class Camping implements InCamping {
      */
     @Override
     public String llistarTasquesManteniment() throws ExcepcioCamping {
-        return "";
+        return llistaTasquesManteniment.llistarTasquesManteniment();
     }
 
     /**
@@ -83,7 +85,8 @@ public class Camping implements InCamping {
      */
     @Override
     public void afegirTascaManteniment(int num, String tipus, String idAllotjament, String data, int dies) throws ExcepcioCamping {
-
+        Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
+        llistaTasquesManteniment.afegirTascaManteniment(num, tipus, allotjament, data, dies);
     }
 
     /**
@@ -94,7 +97,8 @@ public class Camping implements InCamping {
      */
     @Override
     public void completarTascaManteniment(int num) throws ExcepcioCamping {
-
+        TascaManteniment tasca = llistaTasquesManteniment.getTascaManteniment(num);
+        llistaTasquesManteniment.completarTascaManteniment(tasca);
     }
 
     /**
@@ -104,7 +108,7 @@ public class Camping implements InCamping {
      */
     @Override
     public int calculaAccessosNoAccessibles() {
-        return 0;
+        return llistaAccessos.calculaAccessosNoAccessibles();
     }
 
     /**
@@ -114,7 +118,7 @@ public class Camping implements InCamping {
      */
     @Override
     public float calculaMetresTerra() {
-        return 0;
+        return llistaAccessos.calculaMetresTerra();
     }
 
     /**

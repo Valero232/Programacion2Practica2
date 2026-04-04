@@ -91,7 +91,7 @@ public class LlistaAccessos implements InLlistaAccessos{
         boolean buit=true;
         int numAccessosNoAccessibles = 0;
         while(itr.hasNext()){
-            if(itr.next().isAccessibilitat()){
+            if(!(itr.next().isAccessibilitat())){
                 numAccessosNoAccessibles++;
             }
             buit = false;
