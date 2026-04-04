@@ -3,6 +3,8 @@ package prog2.vista;
 import prog2.model.Camping;
 import prog2.vista.Menu;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class VistaCamping {
@@ -90,13 +92,41 @@ public class VistaCamping {
                     break;
 
                 case MENU_PRINCIPAL_OPCIO7:
-                    // Mostrem un missatge indicant que s'ha triat aquesta opciÃ³
-                    System.out.println("Has triat la opciÃ³ 2");
+                    try{
+                        int num;
+                        String tipus;
+                        String idAllotjament;
+                        String data;
+                        int dies;
+
+                        System.out.println("Numero de tasca: ");
+                        num = sc.nextInt();
+                        System.out.println("Tipus de tasca: ");
+                        tipus = sc.nextLine();
+                        System.out.println("Id del Allotjament: ");
+                        idAllotjament = sc.nextLine();
+                        System.out.println("Data: ");
+                        data = sc.nextLine();
+                        System.out.println("Numero de dies: ");
+                        dies = sc.nextInt();
+
+                        camping.afegirTascaManteniment(num, tipus, idAllotjament, data, dies);
+                    }
+                    catch (ExcepcioCamping e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
 
+
                 case MENU_PRINCIPAL_OPCIO8:
-                    // Mostrem un missatge indicant que s'ha triat aquesta opciÃ³
-                    System.out.println("Has triat la opciÃ³ 2");
+                    try {
+                        camping.llistarTasquesManteniment();
+                        System.out.println("Quina numero de tasca vols completar: ");
+                        camping.completarTascaManteniment(sc.nextInt());
+
+                    } catch (ExcepcioCamping e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
 
                 case MENU_PRINCIPAL_OPCIO9:
@@ -108,11 +138,13 @@ public class VistaCamping {
                     break;
 
                 case MENU_PRINCIPAL_OPCIO11:
-                    camping.
+                    System.out.println("Nombre del fitxer per guardar: ");
+                    camping.save(sc.nextLine());
                     break;
+
                 case MENU_PRINCIPAL_OPCIO12:
-                    // Mostrem un missatge indicant que s'ha triat aquesta opciÃ³
-                    System.out.println("Has triat la opciÃ³ 2");
+                    System.out.println("Nombre del fitxer per carregar: ");
+                    camping.load(sc.nextLine());
                     break;
 
                 case MENU_PRINCIPAL_SORTIR:
