@@ -15,4 +15,8 @@ public abstract class AccesTerra extends Acces{
 
     public float getLongitud(){return longitud;}
 
+    @Override
+    public String toString(){
+        return super.toString() + "Longitud= "+longitud+". ";
+    }
 }

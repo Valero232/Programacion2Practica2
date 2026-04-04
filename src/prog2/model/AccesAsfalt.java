@@ -15,4 +15,9 @@ public abstract class AccesAsfalt extends Acces{
 
     public float getAreaAsfalt(){return areaAsfalt;}
 
+    @Override
+    public String toString(){
+        return super.toString() + "Àrea asfaltada= "+areaAsfalt+". ";
+    }
+
 }

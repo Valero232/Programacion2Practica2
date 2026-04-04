@@ -22,4 +22,9 @@ public class CarreteraAsfalt extends AccesAsfalt{
 
     public float getPes(){return pes;}
 
+    @Override
+    public String toString(){
+        return super.toString()+"Pes màxim= "+pes+". ";
+    }
+
 }
