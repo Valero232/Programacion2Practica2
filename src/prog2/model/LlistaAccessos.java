@@ -25,7 +25,12 @@ public class LlistaAccessos implements InLlistaAccessos{
      */
     @Override
     public void afegirAcces(Acces acc) throws ExcepcioCamping {
-
+        if(llistaAcces.contains(acc)){
+            throw new ExcepcioCamping("L'accés "+acc.getNom()+" ja existeix a la llista");
+        }
+        else{
+            llistaAcces.add(acc);
+        }
     }
 
     /**
