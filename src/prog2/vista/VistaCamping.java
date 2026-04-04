@@ -62,8 +62,9 @@ public class VistaCamping {
             switch(opcio) {
                 case MENU_PRINCIPAL_OPCIO1:
                    try {
-                       camping.llistarAllotjaments("Operatiu");
-                       camping.llistarAllotjaments("No Operatiu");
+                       System.out.println(camping.llistarAllotjaments("Operatiu"));
+                       System.out.println(camping.llistarAllotjaments("No Operatiu"));
+
                    } catch (ExcepcioCamping e) {
                        System.out.println(e.getMessage());
                    }
@@ -71,7 +72,7 @@ public class VistaCamping {
 
                 case MENU_PRINCIPAL_OPCIO2:
                    try {
-                       camping.llistarAllotjaments("Operatiu");
+                       System.out.println(camping.llistarAllotjaments("Operatiu"));
                    } catch (ExcepcioCamping e) {
                        System.out.println(e.getMessage());
                    }
@@ -79,7 +80,7 @@ public class VistaCamping {
 
                 case MENU_PRINCIPAL_OPCIO3:
                     try {
-                        camping.llistarAllotjaments("No Operatiu");
+                        System.out.println(camping.llistarAllotjaments("No Operatiu"));
                     } catch (ExcepcioCamping e) {
                         System.out.println(e.getMessage());
                     }
@@ -87,7 +88,7 @@ public class VistaCamping {
 
                 case MENU_PRINCIPAL_OPCIO4:
                     try {
-                        camping.llistarAccessos("Obert");
+                        System.out.println(camping.llistarAccessos("Obert"));
                     } catch (ExcepcioCamping e) {
                         System.out.println(e.getMessage());
                     }
@@ -95,14 +96,14 @@ public class VistaCamping {
 
                 case MENU_PRINCIPAL_OPCIO5:
                     try {
-                        camping.llistarAccessos("Tancat");
+                        System.out.println(camping.llistarAccessos("Tancat"));
                     } catch (ExcepcioCamping e) {
                         System.out.println(e.getMessage());
                     }
                     break;
                 case MENU_PRINCIPAL_OPCIO6:
                     try {
-                        camping.llistarTasquesManteniment();
+                        System.out.println(camping.llistarTasquesManteniment());
                     } catch (ExcepcioCamping e) {
                         System.out.println(e.getMessage());
                     }
