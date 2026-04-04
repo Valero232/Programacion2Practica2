@@ -15,7 +15,6 @@ public class VistaCamping {
 
     // Declarem les opcions per a referir-se a les opcions del menú.
     static private enum OpcionsMenuPrincipal {MENU_PRINCIPAL_OPCIO1,MENU_PRINCIPAL_OPCIO2,MENU_PRINCIPAL_OPCIO3, MENU_PRINCIPAL_OPCIO4, MENU_PRINCIPAL_OPCIO5, MENU_PRINCIPAL_OPCIO6, MENU_PRINCIPAL_OPCIO7, MENU_PRINCIPAL_OPCIO8, MENU_PRINCIPAL_OPCIO9, MENU_PRINCIPAL_OPCIO10, MENU_PRINCIPAL_OPCIO11, MENU_PRINCIPAL_OPCIO12,MENU_PRINCIPAL_SORTIR};
-    static private enum OpcionsSubmenu1 {MENU_S1_OPCIO1,MENU_S1_OPCIO2,MENU_S1_SORTIR};
 
     // Declarem descripcions personalitzades per a les opcions del menú principal
     static private String[] descMenuPrincipal={
@@ -62,28 +61,51 @@ public class VistaCamping {
             // Fem les accions necessÃ ries
             switch(opcio) {
                 case MENU_PRINCIPAL_OPCIO1:
-                    camping.llistarAllotjaments("Operatiu");
-                    camping.llistarAllotjaments("No Operatiu");
+                   try {
+                       camping.llistarAllotjaments("Operatiu");
+                       camping.llistarAllotjaments("No Operatiu");
+                   } catch (ExcepcioCamping e) {
+                       System.out.println(e.getMessage());
+                   }
                     break;
 
                 case MENU_PRINCIPAL_OPCIO2:
-                    camping.llistarAllotjaments("Operatiu");
+                   try {
+                       camping.llistarAllotjaments("Operatiu");
+                   } catch (ExcepcioCamping e) {
+                       System.out.println(e.getMessage());
+                   }
                     break;
 
                 case MENU_PRINCIPAL_OPCIO3:
-                    camping.llistarAllotjaments("No Operatiu");
+                    try {
+                        camping.llistarAllotjaments("No Operatiu");
+                    } catch (ExcepcioCamping e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
 
                 case MENU_PRINCIPAL_OPCIO4:
-                    camping.llistarAccessos("Obert");
+                    try {
+                        camping.llistarAccessos("Obert");
+                    } catch (ExcepcioCamping e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
 
                 case MENU_PRINCIPAL_OPCIO5:
-                    camping.llistarAccessos("Tancat");
-
+                    try {
+                        camping.llistarAccessos("Tancat");
+                    } catch (ExcepcioCamping e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case MENU_PRINCIPAL_OPCIO6:
-                    camping.llistarTasquesManteniment();
+                    try {
+                        camping.llistarTasquesManteniment();
+                    } catch (ExcepcioCamping e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
 
                 case MENU_PRINCIPAL_OPCIO7:
@@ -96,6 +118,7 @@ public class VistaCamping {
 
                         System.out.println("Numero de tasca: ");
                         num = sc.nextInt();
+                        sc.nextLine();
                         System.out.println("Tipus de tasca: ");
                         tipus = sc.nextLine();
                         System.out.println("Id del Allotjament: ");
@@ -133,13 +156,21 @@ public class VistaCamping {
                     break;
 
                 case MENU_PRINCIPAL_OPCIO11:
-                    System.out.println("Nombre del fitxer per guardar: ");
-                    camping.save(sc.nextLine());
+                    try {
+                        System.out.println("Nombre del fitxer per guardar: ");
+                        camping.save(sc.nextLine());
+                    } catch (ExcepcioCamping e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
 
                 case MENU_PRINCIPAL_OPCIO12:
-                    System.out.println("Nombre del fitxer per carregar: ");
-                    camping.load(sc.nextLine());
+                    try {
+                        System.out.println("Nombre del fitxer per carregar: ");
+                        camping.load(sc.nextLine());
+                    } catch (ExcepcioCamping e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
 
                 case MENU_PRINCIPAL_SORTIR:
