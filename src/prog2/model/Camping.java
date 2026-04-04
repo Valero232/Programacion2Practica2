@@ -87,6 +87,7 @@ public class Camping implements InCamping {
     public void afegirTascaManteniment(int num, String tipus, String idAllotjament, String data, int dies) throws ExcepcioCamping {
         Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
         llistaTasquesManteniment.afegirTascaManteniment(num, tipus, allotjament, data, dies);
+        llistaAccessos.actualitzaEstatAccessos();
     }
 
     /**
@@ -99,6 +100,7 @@ public class Camping implements InCamping {
     public void completarTascaManteniment(int num) throws ExcepcioCamping {
         TascaManteniment tasca = llistaTasquesManteniment.getTascaManteniment(num);
         llistaTasquesManteniment.completarTascaManteniment(tasca);
+        llistaAccessos.actualitzaEstatAccessos();
     }
 
     /**
