@@ -137,7 +137,6 @@ public class Camping implements InCamping {
         FileInputStream fin = null;
         try{
             fin = new FileInputStream(file);
-
             ObjectInputStream ois = new ObjectInputStream(fin);
             Camping camping = (Camping) ois.readObject();
             return camping;
