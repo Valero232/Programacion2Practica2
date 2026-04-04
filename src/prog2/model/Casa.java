@@ -2,11 +2,11 @@ package prog2.model;
 
 public abstract class Casa extends Allotjament{
     //Atributs
-    private String mida;
+    private float mida;
     private int numHabitacions;
     private int capacitat;
 
-    public Casa(String nom, String idAllotjament, long estadaMinimaALTA, long estadaMinimaBAIXA, boolean operatiu, String iluminacio, String mida, int numHabitacions, int capacitat){
+    public Casa(String nom, String idAllotjament, long estadaMinimaALTA, long estadaMinimaBAIXA, boolean operatiu, String iluminacio, float mida, int numHabitacions, int capacitat){
         super(nom,idAllotjament,estadaMinimaALTA,estadaMinimaBAIXA,operatiu,iluminacio);
         this.mida = mida;
         this.numHabitacions = numHabitacions;

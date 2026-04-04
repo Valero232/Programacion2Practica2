@@ -6,7 +6,7 @@ public class Glamping extends Casa{
     private String tipus;
     private boolean casaPerMascotes;
 
-    public Glamping(String nom, String idAllotjament, boolean operatiu, String iluminacio, String mida, int numHabitacions, int capacitat, String tipus, boolean casaPerMascotes) {
+    public Glamping(String nom, String idAllotjament, boolean operatiu, String iluminacio, float mida, int numHabitacions, int capacitat, String tipus, boolean casaPerMascotes) {
         super(nom, idAllotjament, 3, 3, operatiu, iluminacio, mida, numHabitacions, capacitat);
         this.tipus = tipus;
         this.casaPerMascotes = casaPerMascotes;

@@ -4,7 +4,7 @@ public class MobilHome extends Casa{
     //Atributs
     private boolean terrassaBarbacoa;
 
-    public MobilHome(String nom, String idAllotjament,boolean operatiu, String iluminacio,String mida, int numHabitacions, int capacitat, boolean terrassaBarbacoa) {
+    public MobilHome(String nom, String idAllotjament,boolean operatiu, String iluminacio,float mida, int numHabitacions, int capacitat, boolean terrassaBarbacoa) {
         super(nom, idAllotjament, 5, 3,operatiu,iluminacio, mida, numHabitacions, capacitat);
         this.terrassaBarbacoa = terrassaBarbacoa;
     }
