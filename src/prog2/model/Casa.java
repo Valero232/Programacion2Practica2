@@ -13,7 +13,7 @@ public abstract class Casa extends Allotjament{
         this.capacitat = capacitat;
     }
 
-    public String getMida(){
+    public float getMida(){
         return this.mida;
     }
 
@@ -25,7 +25,7 @@ public abstract class Casa extends Allotjament{
         return this.capacitat;
     }
 
-    public void setMida(String mida){
+    public void setMida(float mida){
         this.mida = mida;
     }
 
