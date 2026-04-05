@@ -85,13 +85,6 @@ public abstract class Acces implements InAcces, Serializable {
 
     @Override
     public String toString(){
-        String llistaAllotjaments_ = "";
-        if(llistaAllotjaments.containsAllotjamentOperatiu()){
-            llistaAllotjaments_ += llistaAllotjaments.llistarAllotjaments("Operatiu");
-        }
-        else{
-            llistaAllotjaments_ += llistaAllotjaments.llistarAllotjaments("No Operatiu");
-        }
-        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+".\n Allotjaments: "+llistaAllotjaments_;
+        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+".\n Allotjaments: "+llistaAllotjaments.llistarAllotjaments("Tots");
     }
 }

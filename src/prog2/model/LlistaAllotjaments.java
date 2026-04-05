@@ -57,7 +57,9 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable {
             estat_ = true;
         } else if (estat.toUpperCase().equals("NO OPERATIU")){
             estat_ = false;
-        } else {
+        } else if (estat.toUpperCase().equals("TOTS")) {
+            estat_ = true; //Realment no farà res, però ha de tenir assignat un valor per evitar errors.
+        }else{
             throw new ExcepcioCamping("Estat no escrit correctament");
         }
 
@@ -66,7 +68,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable {
         String llista = "";
         while(itr.hasNext()){
             Allotjament allotjament = itr.next();
-            if (allotjament.isOperatiu() == estat_) {
+            if ((allotjament.isOperatiu() == estat_)||estat.toUpperCase().equals("TOTS")) {
                 llista += allotjament.toString() + "\n";
                 minim = true;
             }

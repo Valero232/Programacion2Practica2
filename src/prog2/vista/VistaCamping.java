@@ -62,11 +62,7 @@ public class VistaCamping {
             switch(opcio) {
                 case MENU_PRINCIPAL_OPCIO1:
                    try {
-                       System.out.println("Allotjaments operatius:");
-                       System.out.println(camping.llistarAllotjaments("Operatiu"));
-                       System.out.println("Allotjaments no operatius:");
-                       System.out.println(camping.llistarAllotjaments("No Operatiu"));
-
+                       System.out.println(camping.llistarAllotjaments("Tots"));
                    } catch (ExcepcioCamping e) {
                        System.out.println(e.getMessage());
                    }
