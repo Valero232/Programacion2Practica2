@@ -62,7 +62,9 @@ public class VistaCamping {
             switch(opcio) {
                 case MENU_PRINCIPAL_OPCIO1:
                    try {
+                       System.out.println("Allotjaments operatius:");
                        System.out.println(camping.llistarAllotjaments("Operatiu"));
+                       System.out.println("Allotjaments no operatius:");
                        System.out.println(camping.llistarAllotjaments("No Operatiu"));
 
                    } catch (ExcepcioCamping e) {
@@ -122,7 +124,7 @@ public class VistaCamping {
                         sc.nextLine();
                         System.out.println("Tipus de tasca: ");
                         tipus = sc.nextLine();
-                        System.out.println("Id del Allotjament: ");
+                        System.out.println("Id de l'allotjament: ");
                         idAllotjament = sc.nextLine();
                         System.out.println("Data: ");
                         data = sc.nextLine();
@@ -139,8 +141,8 @@ public class VistaCamping {
 
                 case MENU_PRINCIPAL_OPCIO8:
                     try {
-                        camping.llistarTasquesManteniment();
-                        System.out.println("Quina numero de tasca vols completar: ");
+                        System.out.println(camping.llistarTasquesManteniment());
+                        System.out.println("Quin numero de tasca vols completar: ");
                         camping.completarTascaManteniment(sc.nextInt());
 
                     } catch (ExcepcioCamping e) {

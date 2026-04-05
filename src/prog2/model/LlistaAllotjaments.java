@@ -75,7 +75,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable {
             return llista;
         }
         else{
-            throw new ExcepcioCamping("No hi ha allotjaments en l'estat passat com a paràmetre");
+            throw new ExcepcioCamping("No hi ha allotjaments amb l'estat '"+estat+"' a la llista");
         }
     }
 

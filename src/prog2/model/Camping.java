@@ -35,6 +35,27 @@ public class Camping implements InCamping, Serializable {
     }
 
     /**
+     * Retorna la llista d'allotjaments.
+     *
+     * @return LlistaAllotjaments
+     */
+    public LlistaAllotjaments getLlistaAllotjaments(){return llistaAllotjaments;}
+
+    /**
+     * Retorna la llista d'accessos.
+     *
+     * @return LlistaAccessos
+     */
+    public LlistaAccessos getLlistaAccessos(){return llistaAccessos;}
+
+    /**
+     * Retorna la llista de tasques.
+     *
+     * @return LlistaTasquesManteniment
+     */
+    public LlistaTasquesManteniment getLlistaTasquesManteniment(){return llistaTasquesManteniment;}
+
+    /**
      * Llista els allotjaments segons el seu estat.
      *
      * @param estat Estat dels allotjaments a llistar. (Operatiu, No Operatiu)

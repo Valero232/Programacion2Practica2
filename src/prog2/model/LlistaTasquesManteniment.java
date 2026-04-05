@@ -58,8 +58,8 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
         boolean trobat = false;
         while(itr.hasNext()){
             TascaManteniment tascaManteniment = itr.next();
-            if(tascaManteniment==tasca){
-                llistaTascaManteniment.remove(tascaManteniment);
+            if(tascaManteniment.getNum()==tasca.getNum()){
+                itr.remove();
                 tascaManteniment.getAllotjament().obrirAllotjament();
                 trobat = true;
             }

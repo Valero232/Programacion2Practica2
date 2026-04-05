@@ -1,6 +1,7 @@
 package prog2.model;
 
 import java.io.Serializable;
+import java.util.Iterator;
 
 public abstract class Acces implements InAcces, Serializable {
 
@@ -84,6 +85,13 @@ public abstract class Acces implements InAcces, Serializable {
 
     @Override
     public String toString(){
-        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+", allotjaments ="+/*llistaAllotjaments.llistarAllotjaments("Operatiu")+llistaAllotjaments.llistarAllotjaments("No Operatiu")+*/". ";
+        String llistaAllotjaments_ = "";
+        if(llistaAllotjaments.containsAllotjamentOperatiu()){
+            llistaAllotjaments_ += llistaAllotjaments.llistarAllotjaments("Operatiu");
+        }
+        else{
+            llistaAllotjaments_ += llistaAllotjaments.llistarAllotjaments("No Operatiu");
+        }
+        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+".\n Allotjaments: "+llistaAllotjaments_;
     }
 }
