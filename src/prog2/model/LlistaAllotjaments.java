@@ -12,7 +12,10 @@ public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable {
  //Atributs
     private ArrayList<Allotjament> llistaAllotjaments;
 
-
+    /**
+     * Crea una nova instància de LlistaAllotjaments inicialitzant
+     * la llista interna d'allotjaments com un ArrayList buit.
+     */
   public LlistaAllotjaments(){
       llistaAllotjaments = new ArrayList<Allotjament>();
   }

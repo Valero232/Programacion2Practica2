@@ -11,6 +11,11 @@ public abstract class Acces implements InAcces, Serializable {
     protected boolean accessibilitat;
     private LlistaAllotjaments llistaAllotjaments = new LlistaAllotjaments();
 
+    /**
+     * Crea una nova instància d'Acces amb un nom i un estat operatiu inicial.
+     * @param nom Nom identificador de l'accés.
+     * @param estat Estat inicial de l'accés (true si és operatiu, false en cas contrari).
+     */
     public Acces(String nom, boolean estat){
         this.nom = nom;
         this.estat = estat;
@@ -83,6 +88,12 @@ public abstract class Acces implements InAcces, Serializable {
         return llistaAllotjaments;
     }
 
+    /**
+     * Retorna una representació en format text de l'accés,
+     * incloent el nom, l'estat i el tipus d'accessibilitat,
+     * així com la llista d'allotjaments associats.
+     * @return Cadena de text amb la informació completa de l'accés.
+     */
     @Override
     public String toString(){
         return "\nNom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+".\nAllotjaments:\n"+llistaAllotjaments.llistarAllotjaments("Tots");

@@ -78,17 +78,28 @@ public abstract class Allotjament implements InAllotjament, Serializable {
 
     public boolean getOperatiu(){return operatiu;}
 
+    /**
+     * Tanca l'allotjament i actualitza el seu estat intern segons la tasca de manteniment.
+     * @param tasca Objecte TascaManteniment que conté la nova configuració d'il·luminació.
+     */
     @Override
     public void tancarAllotjament(TascaManteniment tasca){
         operatiu = false;
         iluminacio = tasca.getIluminacioAllotjament();
     }
+    /**
+     * Obre l'allotjament i restableix la il·luminació al valor per defecte.
+     */
 
     @Override
     public void obrirAllotjament(){
         operatiu = true;
         iluminacio = "100%";
     }
+    /**
+     * Indica si l'allotjament es troba operatiu.
+     * @return true si l'allotjament està operatiu, false en cas contrari.
+     */
 
     public boolean isOperatiu(){
         return operatiu;

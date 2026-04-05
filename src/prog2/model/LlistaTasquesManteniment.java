@@ -10,7 +10,10 @@ public class LlistaTasquesManteniment implements InLlistaTasquesManteniment, Ser
     //Atributs
     private ArrayList<TascaManteniment> llistaTascaManteniment;
 
-
+    /**
+     * Crea una nova instància de LlistaTasquesManteniment inicialitzant
+     * la llista interna de tasques com un ArrayList buit.
+     */
     public LlistaTasquesManteniment(){
         llistaTascaManteniment = new ArrayList<TascaManteniment>();
     }
