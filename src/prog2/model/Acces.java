@@ -85,6 +85,6 @@ public abstract class Acces implements InAcces, Serializable {
 
     @Override
     public String toString(){
-        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+".\n Allotjaments: "+llistaAllotjaments.llistarAllotjaments("Tots");
+        return "\nNom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+".\n Allotjaments: "+llistaAllotjaments.llistarAllotjaments("Tots");
     }
 }

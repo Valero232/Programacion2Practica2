@@ -1,12 +1,11 @@
 package prog2.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import prog2.vista.ExcepcioCamping;
 
-public class LlistaAccessos implements InLlistaAccessos, Serializable {
+public class LlistaAccessos implements InLlistaAccessos{
 
 
     //Atributs
@@ -57,11 +56,11 @@ public class LlistaAccessos implements InLlistaAccessos, Serializable {
         while(itr.hasNext()){
             Acces acces = itr.next();
             if(acces.getEstat()==estat){
-                llistat += acces.toString()+"\n";
-                buit = false;
+                llistat += acces.toString();
             }
+            buit = false;
         }
-        if(buit){throw new ExcepcioCamping("No hi ha accessos en l'estat passat com a paràmetre");}
+        if(buit){throw new ExcepcioCamping("La llista d'accessos està buida");}
         return llistat;
     }
 

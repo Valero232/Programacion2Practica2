@@ -62,7 +62,9 @@ public class VistaCamping {
             switch(opcio) {
                 case MENU_PRINCIPAL_OPCIO1:
                    try {
-                       System.out.println(camping.llistarAllotjaments("Tots"));
+                       System.out.println(camping.llistarAllotjaments("Operatiu"));
+                       System.out.println(camping.llistarAllotjaments("No Operatiu"));
+
                    } catch (ExcepcioCamping e) {
                        System.out.println(e.getMessage());
                    }
@@ -120,7 +122,7 @@ public class VistaCamping {
                         sc.nextLine();
                         System.out.println("Tipus de tasca: ");
                         tipus = sc.nextLine();
-                        System.out.println("Id de l'allotjament: ");
+                        System.out.println("Id del Allotjament: ");
                         idAllotjament = sc.nextLine();
                         System.out.println("Data: ");
                         data = sc.nextLine();
@@ -137,8 +139,8 @@ public class VistaCamping {
 
                 case MENU_PRINCIPAL_OPCIO8:
                     try {
-                        System.out.println(camping.llistarTasquesManteniment());
-                        System.out.println("Quin numero de tasca vols completar: ");
+                        camping.llistarTasquesManteniment();
+                        System.out.println("Quina numero de tasca vols completar: ");
                         camping.completarTascaManteniment(sc.nextInt());
 
                     } catch (ExcepcioCamping e) {
@@ -155,7 +157,7 @@ public class VistaCamping {
                     break;
 
                 case MENU_PRINCIPAL_OPCIO10:
-                        System.out.println("Número total de metres dels accessos de terra: " + camping.calculaMetresTerra());
+                        System.out.println("Número total de metres dels accessos de terra" + camping.calculaMetresTerra());
                     break;
 
                 case MENU_PRINCIPAL_OPCIO11:
@@ -170,7 +172,7 @@ public class VistaCamping {
                 case MENU_PRINCIPAL_OPCIO12:
                     try {
                         System.out.println("Nombre del fitxer per carregar: ");
-                        camping = camping.load(sc.nextLine());
+                        camping.load(sc.nextLine());
                     } catch (ExcepcioCamping e) {
                         System.out.println(e.getMessage());
                     }
