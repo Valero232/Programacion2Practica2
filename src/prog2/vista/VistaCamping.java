@@ -157,7 +157,7 @@ public class VistaCamping {
                     break;
 
                 case MENU_PRINCIPAL_OPCIO10:
-                        System.out.println("Número total de metres dels accessos de terra" + camping.calculaMetresTerra());
+                        System.out.println("Número total de metres dels accessos de terra: " + camping.calculaMetresTerra());
                     break;
 
                 case MENU_PRINCIPAL_OPCIO11:
@@ -172,7 +172,7 @@ public class VistaCamping {
                 case MENU_PRINCIPAL_OPCIO12:
                     try {
                         System.out.println("Nombre del fitxer per carregar: ");
-                        camping.load(sc.nextLine());
+                        camping = camping.load(sc.nextLine());
                     } catch (ExcepcioCamping e) {
                         System.out.println(e.getMessage());
                     }

@@ -1,6 +1,8 @@
 package prog2.model;
 
-public abstract class Acces implements InAcces{
+import java.io.Serializable;
+
+public abstract class Acces implements InAcces, Serializable {
 
     //Atributs
     private String nom;
@@ -82,6 +84,6 @@ public abstract class Acces implements InAcces{
 
     @Override
     public String toString(){
-        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+", allotjaments ="+llistaAllotjaments.llistarAllotjaments("Operatiu")+llistaAllotjaments.llistarAllotjaments("No Operatiu")+". ";
+        return "Nom= "+nom+", estat="+estat+", accessibilitat="+accessibilitat+", allotjaments ="+/*llistaAllotjaments.llistarAllotjaments("Operatiu")+llistaAllotjaments.llistarAllotjaments("No Operatiu")+*/". ";
     }
 }

@@ -1,12 +1,13 @@
 package prog2.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Locale;
 
 import prog2.vista.ExcepcioCamping;
 
-public class LlistaAllotjaments implements InLlistaAllotjaments{
+public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable {
 
  //Atributs
     private ArrayList<Allotjament> llistaAllotjaments;
@@ -124,7 +125,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments{
         Iterator<Allotjament> itr = llistaAllotjaments.iterator();
         while(itr.hasNext()){
             Allotjament allotjament = itr.next();
-            if(allotjament.getId()==id){
+            if(allotjament.getId().equals(id)){
                 return allotjament;
             }
         }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.time.temporal.ChronoUnit;
 
-public class Camping implements InCamping {
+public class Camping implements InCamping, Serializable {
 
     //Atributos
 
